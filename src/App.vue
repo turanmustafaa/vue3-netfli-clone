@@ -1,16 +1,17 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <router-view></router-view>
+  <teleport to='body'>
+        <cardDetailModal />
+    </teleport> 
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import cardDetailModal from './components/parts/cardDetailModal.vue';
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  components : {
+        cardDetailModal
+    },
 }
 </script>
 
