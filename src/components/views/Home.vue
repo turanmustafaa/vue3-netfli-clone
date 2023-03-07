@@ -28,5 +28,7 @@ export default {
 <style scoped>
 .lines {
     overflow: hidden;
+    margin-top: -130px;
+    z-index: 3;
 }
 </style>

@@ -12,6 +12,7 @@ import { faCirclePlay } from '@fortawesome/free-solid-svg-icons'
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import store from './store'
 import "@/assets/style.css"
 const app = createApp(App)
@@ -23,6 +24,7 @@ library.add(faCirclePlay)
 library.add(faThumbsUp)
 library.add(faCheck)
 library.add(faAngleDown)
+library.add(faXmark)
 app.use(store)
 app.component("GlobalHeader",GlobalHeader)
 app.component('font-awesome-icon', FontAwesomeIcon)
