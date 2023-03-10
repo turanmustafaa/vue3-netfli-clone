@@ -62,8 +62,8 @@ section.carousel .carousel__viewport ol.carousel__track {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-transition: 1.1s ease all;
-  transition: 1.1s ease all;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
   background-color: #141414 !important;
   overflow: hidden;
 }

@@ -7,10 +7,8 @@
         </div>
         <div  class="header-links">
             <div class="left">
-                <a href="">Ana Sayfa</a>
-                <a href="">Dizlier</a>
-                <a href="">Filmler</a>
-                <a href="">Listem</a>
+                <router-link to="/">Ana Sayfa</router-link>
+                <router-link to="/mylist">Listem</router-link>
             </div>
             <div class="right">
                 <input v-model="inputData" ref="input" type="text" id="inp">
