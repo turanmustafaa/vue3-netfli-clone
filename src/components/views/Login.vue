@@ -9,9 +9,9 @@
         <div class="content">
             <div class="content-body">
                 <h2>Log In</h2>
-                <form action="">
-                    <input type="text" placeholder="e-posta">
-                    <input type="password" placeholder="parola">
+                <form @submit.prevent="loginFnc">
+                    <input v-model="userData.eMail" type="text" placeholder="e-posta">
+                    <input v-model="userData.password" type="password" placeholder="parola">
                     <button type="submit">Log In</button>
                 </form>
                 <div style="color: #737373 ">Do u wanna join to Netflix ? <router-link to="/register">Now Register!</router-link></div>
@@ -23,8 +23,29 @@
   </div>
 </template>
 <script>
+import { doc, getDoc} from "firebase/firestore";
+import { db} from '@/firebase'
 export default {
-    
+    data() {
+        return {
+            userData : {
+                eMail : null,
+                password : null,
+            }
+        }
+    },
+    methods : {
+        async loginFnc() {
+            const docRef = doc(db, "users","userid");
+            const docSnap = await getDoc(docRef);
+            if (docSnap.exists()) {
+          console.log("Document data:", docSnap.data());
+            } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+                    }
+    }
+}
 }
 </script>
 <style scoped>
@@ -45,6 +66,9 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
+         background-color: rgba(0, 0, 0, 0.4) ;
+  background-blend-mode: darken;
+        
     }
     .body .content {
          background-color: rgba(0,0,0,.75);
